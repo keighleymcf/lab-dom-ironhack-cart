@@ -1,52 +1,66 @@
-function deleteItem(e){
+function deleteItem(e) {
 
 }
 
-function getPriceByProduct(itemNode){
+function getPriceByProduct(itemNode) {
+  return parseFloat(document.getElementsByClassName("product-price")[itemNode].innerText.substring(1));
+}
+
+function updatePriceByProduct(index) {
+
+  let productPrice = getPriceByProduct(index);
+  let productQty = parseFloat(document.getElementsByClassName("qty")[index].value);
+  console.log(productPrice, productQty)
+  document.getElementsByClassName("total-product-price")[index].innerText = "$ " + productPrice * productQty;
+
+  // productPrice = document.getElementById("qty") * productPrice;
+
+  // document.getElementsByClass("total-product-price").innerText = productPrice;
 
 }
 
-function updatePriceByProduct(productPrice, index){
+function getTotalPrice(index) {
+  updatePriceByProduct(index);
+}
+
+function createQuantityInput() {
 
 }
 
-function getTotalPrice() {
+function createDeleteButton() {
 
 }
 
-function createQuantityInput(){
+function createQuantityNode() {
 
 }
 
-function createDeleteButton(){
+function createItemNode(dataType, itemData) {
 
 }
 
-function createQuantityNode(){
+function createNewItemRow(itemName, itemUnitPrice) {
 
 }
 
-function createItemNode(dataType, itemData){
+function createNewItem() {
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
+window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  // var createItemButton = document.getElementById('new-item-create');
+  // var deleteButtons = document.getElementsByClassName('btn-delete');
+  document.getElementsByClassName("product-list"));
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+function (product) {
+  getPriceByProduct(indexOf(product));
+})
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+calculatePriceButton.onclick = getTotalPrice;
+// createItemButton.onclick = createNewItem;
+
+// for (var i = 0; i < deleteButtons.length; i++) {
+//   deleteButtons[i].onclick = deleteItem;
+// }
 };
